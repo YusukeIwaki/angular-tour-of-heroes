@@ -1,0 +1,22 @@
+<div *ngIf="currentHero">
+  <h2>{{currentHero.name | uppercase}} Details</h2>
+  <div>
+    <span>id: </span>{{currentHero.id}}
+  </div>
+  <div>
+    <label>name:
+      <input placeholder="name" value="{{currentHero.name}}" #name>
+    </label>
+  </div>
+  <button (click)="updateHero(currentHero.id, name.value)">変更</button>
+</div>
+
+<h2>List Heroes</h2>
+<ul class="heroes">
+  <li
+    *ngFor="let hero of heros"
+    [class.selected]="hero === currentHero"
+    (click)="setCurrentHero(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
