@@ -1,16 +1,4 @@
-<div *ngIf="currentHero">
-  <h2>{{currentHero.name | uppercase}} Details</h2>
-  <div>
-    <span>id: </span>{{currentHero.id}}
-  </div>
-  <div>
-    <label>name:
-      <input placeholder="name" value="{{currentHero.name}}" #name>
-    </label>
-  </div>
-  <button (click)="updateHero(currentHero.id, name.value)">変更</button>
-</div>
-
+<app-hero-detail [hero]=currentHero></app-hero-detail>
 <h2>List Heroes</h2>
 <ul class="heroes">
   <li

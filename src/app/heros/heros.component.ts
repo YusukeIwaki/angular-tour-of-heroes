@@ -29,12 +29,4 @@ export class HerosComponent implements OnInit {
   setCurrentHero(hero: Hero) {
     this.currentHero = hero;
   }
-
-  updateHero(id: number, name: string) {
-    for (let i = 0; i < this.heros.length; i++) {
-      if (this.heros[i].id == id) {
-        this.heros[i].name = name;
-      }
-    }
-  }
 }
